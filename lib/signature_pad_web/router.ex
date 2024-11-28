@@ -17,7 +17,10 @@ defmodule SignaturePadWeb.Router do
   scope "/", SignaturePadWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", PageController, :show
+    get "/password_gen", PageController, :password_generator
+    post "/generate_password", PageController, :generate_password
+    post "/save", PageController, :save
   end
 
   # Other scopes may use custom stacks.
